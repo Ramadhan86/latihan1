@@ -1,19 +1,18 @@
+# Program untuk belajar menentukan kondisi suhu panas, sejuk, dan dingin
+def cek_suhu(suhu):
+    if suhu < 20:
+        return "Suhu Dingin"
+    elif 20 <= suhu <= 30:
+        return "Suhu Sejuk"
+    else:
+        return "Suhu Panas"
 
-# Program untuk menentukan suhu dalam derajat Celsius
-print("Program Menentukan Suhu dalam Derajat Celsius")
-suhu = float(input("Masukkan suhu dalam derajat Celsius: "))
-print("Suhu yang Anda masukkan adalah:", suhu, "derajat Celsius")
-
-# belajar kondisi untuk menentukan suhu
-suhu_n = float(input("Masukkan suhu dalam derajat Celsius untuk penilaian: "))
-if suhu_n < 15:
-    print("Suhu sangat dingin")
-elif 15 <= suhu_n < 25: 
-    print("Suhu sejuk") 
-elif 25 <= suhu_n < 30:
-    print("Suhu hangat")   
-elif 30 <= suhu_n < 50:
-    print("Suhu panas")
-else:
-    print("Suhu sangat panas")
-# Program untuk menentukan suhu dalam derajat
+def main():
+    try:
+        suhu = float(input("Masukkan suhu dalam derajat Celsius: "))
+        hasil = cek_suhu(suhu)
+        print(hasil)
+    except ValueError:
+        print("Input tidak valid. Masukkan angka.")
+if __name__ == "__main__":
+    main()
