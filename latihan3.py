@@ -41,7 +41,7 @@ X = pd.get_dummies(X)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # 4. Train model
-model = RandomForestClassifier(random_state=78)
+model = RandomForestClassifier(random_state=63)
 model.fit(X_train, y_train)
 
 # 5. Evaluasi
@@ -49,7 +49,7 @@ y_pred = model.predict(X_test)
 print(classification_report(y_test, y_pred))
 
 # 6. Prediksi contoh baru
-sample = X_test.iloc[0:1]
+sample = X_test.iloc[0:11]
 prediction = model.predict(sample)
 print("Prediksi kecanduan:", "Ya" if prediction[0] else "Tidak")
 
